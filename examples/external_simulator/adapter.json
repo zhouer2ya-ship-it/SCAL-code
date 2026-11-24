@@ -1,0 +1,7 @@
+{
+  "command": ["{python}", "{demo_solver}", "--input", "{input}", "--output", "{output}"],
+  "parameter_names": ["load_N", "length_m", "young_Pa", "height_m"],
+  "input_name": "input.json",
+  "output_name": "output.json",
+  "timeout_seconds": 120
+}

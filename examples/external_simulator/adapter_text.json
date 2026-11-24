@@ -1,0 +1,8 @@
+{
+  "command": ["{python}", "{demo_solver}", "--input", "{input}", "--output", "{output}", "--format", "text"],
+  "format": "text",
+  "parameter_names": ["load_N", "length_m", "young_Pa", "height_m"],
+  "input_name": "parameters.dat",
+  "output_name": "response.csv",
+  "timeout_seconds": 120
+}

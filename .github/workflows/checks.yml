@@ -1,0 +1,24 @@
+name: Checks
+on: [push, pull_request]
+jobs:
+  reproduce:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: python -m pip install -r requirements-lock.txt
+      - run: python -m pip install . ruff==0.14.3
+      - run: python -m ruff check src tests scripts examples
+      - run: python -m ruff format --check src tests scripts examples
+      - run: python -m pytest -q -rs
+      - run: python -m scal --version
+      - run: python examples/simple_function.py --budget 35 --output outputs/ishigami
+      - run: python examples/external_simulator/run.py --output outputs/external
+      - run: python examples/external_simulator/run.py --output outputs/external --resume

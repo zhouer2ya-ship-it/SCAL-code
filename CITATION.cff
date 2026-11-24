@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use SCAL, please cite this software."
+type: software
+version: "1.0.0"
+title: "SCAL"
+authors:
+  - family-names: "Zhou"
+    given-names: "You"
+    affiliation: "School of Mechanics and Engineering Science, Peking University, Beijing, China"
+repository-code: "https://github.com/zhouer2ya-ship-it/SCAL-code"
+url: "https://github.com/zhouer2ya-ship-it/SCAL-code"
+license: BSD-3-Clause
+abstract: "SCAL algorithms for sparse polynomial-chaos surrogate modelling with heredity-constrained regression and adaptive sampling."

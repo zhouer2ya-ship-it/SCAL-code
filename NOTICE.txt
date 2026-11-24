@@ -1,0 +1,6 @@
+Copyright (c) 2026 Peking University
+
+Author: You Zhou
+School of Mechanics and Engineering Science, Peking University, Beijing, China.
+
+SCAL is distributed under the BSD 3-Clause License. See LICENSE.

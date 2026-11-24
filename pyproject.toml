@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scal"
+version = "1.0.0"
+description = "SCAL algorithms for sparse polynomial-chaos surrogate modelling"
+authors = [{name = "You Zhou"}]
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE", "NOTICE.txt"]
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.2,<3", "scipy>=1.15,<2", "scikit-learn>=1.6,<2", "pandas>=2.2,<3", "threadpoolctl>=3.5,<4", "matplotlib>=3.10,<4"]
+
+[project.urls]
+Repository = "https://github.com/zhouer2ya-ship-it/SCAL-code"
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+dev = ["pytest>=8", "ruff==0.14.3"]
+
+[project.scripts]
+scal = "scal.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]
